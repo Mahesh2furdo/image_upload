@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td><%= picture.name %></td>
+        <td><%= picture.description %></td>
+        <td><%= image_tag picture.image.url(:medium) %></td>
+        <td><%= link_to 'Show', picture %></td>
+        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picture', new_picture_path %>
+
+
+
+<!-- Access Key ID: AKIAITW6V3NJ44JKMDSA -->
+<!-- Secret Access Key: 0mvvd+DVDxStM4h7wcy4vUgzTLd9ORqD0QNaaKm/ -->
+
+
+
+
+<!-- https://s3.ap-south-1.amazonaws.com/samplerailsimageupload/pictures/images/000/000/005/original/SonBedroom01.jpg -->
+
+<!-- //s3.amazonaws.com/samplerailsimageupload/pictures/images/000/000/005/original/SonBedroom01.jpg -->
